@@ -5,6 +5,9 @@ import Marquee from './components/Marquee'
 import About from './components/About'
 import Eyes from './components/Eyes'
 import Featured from './components/Featured'
+import Certificate from './components/Certificate'
+import Play from './components/Play'
+import Contact from './components/Contact'
 
 function App() {
   return (
@@ -15,6 +18,9 @@ function App() {
       <About />
       <Eyes />
       <Featured />
+      <Certificate />
+      <Play />
+      <Contact />
     </div>
   )
 }
