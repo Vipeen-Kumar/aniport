@@ -6,7 +6,7 @@ const LandingPage = () => {
   return (
     // Use min-h-screen to prevent content from being cut off on smaller viewports
     // Reduced padding on mobile (p-4) and increased on larger screens (md:p-8)
-    <div className="w-full min-h-screen bg-zinc-900 p-4 md:p-8 relative text-white">
+    <div data-scroll data-scroll-section data-scroll-speed="-.25" className="w-full min-h-screen bg-zinc-900 p-4 md:p-8 relative text-white">
 
       {/* Button position is adjusted for different screen sizes */}
       <button className="absolute right-4 top-4 md:right-20 md:top-52 bg-emerald-500 text-white text-lg py-2 px-6 rounded-lg font-bold transition-all duration-300 hover:bg-emerald-600 hover:scale-105 hover:shadow-lg">

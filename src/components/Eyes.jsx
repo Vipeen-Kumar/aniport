@@ -50,7 +50,7 @@ function App() {
     <div className="w-full h-screen flex items-center justify-center bg-gray-200">
       <div className="eyes w-full h-screen overflow-hidden">
         {/* The background image container */}
-        <div
+        <div data-scroll data-scroll-speed="-.7"
           className="relative w-full h-full bg-cover bg-center"
           // Using a placeholder image as the local asset is not available
           style={{
