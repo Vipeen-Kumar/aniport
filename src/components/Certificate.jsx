@@ -1,54 +1,68 @@
 import React from 'react';
 
+import MetaLogo from '../assets/Meta-Logo-PNG.png';
+import IBMLogo from '../assets/ibm-logo.png';
+import DeepLearningLogo from '../assets/images.png';
+import MicrosoftLogo from '../assets/micro.png';
+import GoogleLogo from '../assets/google.jpg';
+
 // You can replace this with your actual certificate data
 const certificateData = [
   {
     id: 1,
-    title: 'Advanced React Concepts',
-    issuer: 'React University',
-    date: 'Issued May 2024',
-    link: '#',
-    logo: 'https://placehold.co/100x100/1e293b/ffffff?text=RU',
+    title: 'React Basic',
+    issuer: 'Meta',
+    date: 'Issued January 13, 2025',
+    link: 'https://coursera.org/share/85e0db3d5e872fe6e5c0f3eeec38e4f3',
+    logo: MetaLogo,
   },
   {
     id: 2,
-    title: 'Tailwind CSS Mastery',
-    issuer: 'CSS Gurus',
-    date: 'Issued Feb 2024',
-    link: '#',
-    logo: 'https://placehold.co/100x100/0f172a/ffffff?text=CG',
+    title: 'Programming with JavaScript',
+    issuer: 'Meta',
+    date: 'Issued November 8, 2024',
+    link: 'https://coursera.org/share/10c036baec5595e9b18d2076b2469b48',
+    logo: MetaLogo,
   },
   {
     id: 3,
-    title: 'Full-Stack Web Development',
-    issuer: 'Code Academy',
-    date: 'Issued Dec 2023',
-    link: '#',
-    logo: 'https://placehold.co/100x100/1e293b/ffffff?text=CA',
+    title: 'Python for Data Science, AI & Development',
+    issuer: 'IBM',
+    date: 'Issued October 16, 2024',
+    link: 'https://coursera.org/share/c68fc8ac4446bbddaf79e7a4366985f4',
+    logo: IBMLogo,
   },
   {
     id: 4,
-    title: 'JavaScript Algorithms and Data Structures',
-    issuer: 'FreeCodeCamp',
-    date: 'Issued Sep 2023',
-    link: '#',
-    logo: 'https://placehold.co/100x100/0f172a/ffffff?text=FCC',
+    title: 'Natural Language Processing with Classification and Vector Spaces',
+    issuer: 'DeepLearning.AI',
+    date: 'Issued April 19, 2025',
+    link: 'https://coursera.org/share/f272aa0c02de7907632f7a19ef5c3c7e',
+    logo: DeepLearningLogo,
   },
   {
     id: 5,
-    title: 'Responsive Web Design',
-    issuer: 'W3Schools',
-    date: 'Issued Jun 2023',
-    link: '#',
-    logo: 'https://placehold.co/100x100/1e293b/ffffff?text=W3S',
+    title: 'Data Analysis and Visualization with Power BI',
+    issuer: 'Microsoft',
+    date: 'Issued January 30, 2025',
+    link: 'https://coursera.org/share/48462ac25abe62120eaff42a442c654b',
+    logo: MicrosoftLogo,
   },
     {
     id: 6,
-    title: 'Node.js and Express',
-    issuer: 'The Odin Project',
-    date: 'Issued Mar 2023',
-    link: '#',
-    logo: 'https://placehold.co/100x100/0f172a/ffffff?text=TOP',
+    title: 'Crash Course on Python',
+    issuer: 'Google',
+    date: 'Issued October 8, 2024',
+    link: 'https://coursera.org/share/ce37cedbcc6257c7020990d0f2512907',
+    logo: GoogleLogo,
+  },
+  {
+    id: 7,
+    title: 'Python Project for Data Science',
+    issuer: 'IBM',
+    date: 'Issued October 19, 2024',
+    link: 'https://coursera.org/share/935bddc9e51177d64751b6ebef34c986',
+    logo: IBMLogo,
   },
 ];
 
@@ -86,7 +100,7 @@ const CertificateCard = ({ title, issuer, date, link, logo }) => (
 
 const Certificate = () => {
   return (
-    <div className="bg-slate-900 font-sans p-4 md:p-8">
+    <div id='certificate' className="bg-slate-900 font-sans p-4 md:p-8">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold text-white mb-8 text-center">My Certifications</h2>
         <div className="relative">

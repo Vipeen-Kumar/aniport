@@ -76,7 +76,7 @@ const ProjectCard = ({ title, imageUrl, altText, technologies }) => {
 const Featured = () => {
   return (
     // Main container with a dark background and modern font.
-    <div className="w-full bg-zinc-900 text-white py-10 md:py-20 font-sans">
+    <div id='projects' className="w-full bg-zinc-900 text-white py-10 md:py-20 font-sans">
       <div className="w-full px-5 md:px-20">
         {/* Section Title */}
         <h1 className="text-5xl md:text-7xl font-bold tracking-tight">Featured Projects</h1>

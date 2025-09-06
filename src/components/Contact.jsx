@@ -58,7 +58,7 @@ const Contact = () => {
   ];
 
   return (
-    <div className="antialiased bg-gray-900 font-sans text-gray-200 min-h-screen flex items-center justify-center p-4 sm:p-6 lg:p-8">
+    <div id='contact' className="antialiased bg-gray-900 font-sans text-gray-200 min-h-screen flex items-center justify-center p-4 sm:p-6 lg:p-8">
       <div className="w-full max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 bg-gray-800 rounded-3xl shadow-2xl shadow-cyan-500/10 overflow-hidden">
         
         {/* Contact Info Section */}

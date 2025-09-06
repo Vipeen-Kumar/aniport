@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import logo2 from '../assets/logo2.png';
 
 const Navbar = () => {
@@ -34,6 +34,14 @@ const Navbar = () => {
 
   const navLinks = ["About me", "Projects", "Certificate", "Contact"];
 
+  const handleScrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+    setIsMenuOpen(false); // Close mobile menu after clicking a link
+  };
+
   return (
     <>
       {/* Main Navbar Container */}
@@ -66,8 +74,8 @@ const Navbar = () => {
           {navLinks.map((item, index) => (
             <a
               key={index}
-              href={`#${item.toLowerCase().replace(' ', '-')}`}
-              className="text-lg font-semibold capitalize text-white hover:text-blue-400 transition-colors duration-300"
+              onClick={() => handleScrollToSection(item.toLowerCase().replace(' ', ''))}
+              className="text-lg font-semibold capitalize text-white hover:text-blue-400 transition-colors duration-300 cursor-pointer"
             >
               {item}
             </a>
@@ -110,9 +118,8 @@ const Navbar = () => {
           {navLinks.map((item, index) => (
             <a
               key={index}
-              href={`#${item.toLowerCase().replace(' ', '-')}`}
-              onClick={() => setIsMenuOpen(false)} // Close menu on link click
-              className="text-2xl font-semibold capitalize text-white hover:text-blue-400 transition-colors duration-300"
+              onClick={() => handleScrollToSection(item.toLowerCase().replace(' ', ''))}
+              className="text-2xl font-semibold capitalize text-white hover:text-blue-400 transition-colors duration-300 cursor-pointer"
             >
               {item}
             </a>
