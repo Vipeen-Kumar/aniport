@@ -8,16 +8,16 @@ export default function App() {
 // Data for the projects. In a real application, this might come from an API.
 const projects = [
   {
-    title: 'Project One',
-    imageUrl: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    title: 'LOAN-ELIGIBILITY-PROJECT',
+    imageUrl: 'https://private-user-images.githubusercontent.com/185608141/471216768-6f697222-81d3-4594-9913-90917188d297.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NjYxMTAxODYsIm5iZiI6MTc2NjEwOTg4NiwicGF0aCI6Ii8xODU2MDgxNDEvNDcxMjE2NzY4LTZmNjk3MjIyLTgxZDMtNDU5NC05OTEzLTkwOTE3MTg4ZDI5Ny5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUxMjE5JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MTIxOVQwMjA0NDZaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT0zYTRiYTBmNGI2ODlhODQzODIwYjVmZjkzNDM0MjdlMDk0ZDI3Mzk5MDczYTU2ZjJhZDc3NTNiMzY2NjU1OTI2JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.BMITLPBcs8Pd2zVtx5AuaXCO-lmGClln-lVR63lBte8',
     altText: 'A laptop showing code on a desk',
-    technologies: ['React', 'Node.js', 'Tailwind CSS'],
+    technologies: ['Jupyter Notebook', 'python'],
   },
   {
-    title: 'Project Two',
+    title: 'code-review-AI',
     imageUrl: 'https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=2070&auto=format&fit=crop&ixlib-rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     altText: 'Close-up of HTML code on a screen',
-    technologies: ['JavaScript', 'CSS', 'HTML5'],
+    technologies: ['JavaScript', 'CSS', 'HTML5', 'React', 'Node.js', 'Tailwind CSS'],
   },
   {
     title: 'Project Three',

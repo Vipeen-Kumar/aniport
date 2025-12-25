@@ -1,76 +1,99 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
+import { motion, useSpring, useMotionValue, useTransform } from 'framer-motion';
 import myphoto from '../assets/myphoto.png';
 
 const About = () => {
-  const [rotate, setRotate] = useState({ x: 0, y: 0 });
-  const containerRef = useRef(null);
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const springConfig = { damping: 30, stiffness: 150 };
+  const smoothX = useSpring(mouseX, springConfig);
+  const smoothY = useSpring(mouseY, springConfig);
+
+  // Parallax layers (scales down movement for smaller screens)
+  const backX = useTransform(smoothX, [-300, 300], [10, -10]);
+  const backY = useTransform(smoothY, [-300, 300], [10, -10]);
+
+  const imgX = useTransform(smoothX, [-300, 300], [-15, 15]);
+  const imgY = useTransform(smoothY, [-300, 300], [-15, 15]);
+
+  const topX = useTransform(smoothX, [-300, 300], [-25, 25]);
+  const topY = useTransform(smoothY, [-300, 300], [-25, 25]);
 
   const handleMouseMove = (e) => {
-    if (!containerRef.current) return;
-
-    const { left, top, width, height } = containerRef.current.getBoundingClientRect();
-    const mouseX = e.clientX - left - width / 2;
-    const mouseY = e.clientY - top - height / 2;
-
-    const maxRotate = 25;
-    const rotateX = (mouseY / (height / 2)) * -maxRotate;
-    const rotateY = (mouseX / (width / 2)) * maxRotate;
-
-    setRotate({ x: rotateX, y: rotateY });
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - (rect.left + rect.width / 2);
+    const y = e.clientY - (rect.top + rect.height / 2);
+    mouseX.set(x);
+    mouseY.set(y);
   };
 
   const handleMouseLeave = () => {
-    setRotate({ x: 0, y: 0 });
+    mouseX.set(0);
+    mouseY.set(0);
   };
 
   return (
-    <div id='about' className='w-full py-20 bg-[#c2d756] text-black rounded-tl-3xl rounded-tr-3xl'>
-      <h1 className='text-[3vw] font-inter font-semibold ml-[1vw] mr-[1vw]'>I have a strong interest in software engineering, I am eager to apply my technical skills and problem-solving abilities to innovative projects.</h1>
-      <div className='w-full border-t-[2px] border-[#adbd5c] mt-[4vw] flex flex-col md:flex-row gap-5'>
-        <div className='w-full md:w-1/2 mt-[2vw] ml-[3vw]'>
-          <h1 className='text-[3vw] font-inter font-semibold'>My Skills :</h1>
-          <button className='bg-[#015551] text-white text-[1.25vw] flex gap-5 items-center font-mono py-2 px-6 rounded-full mt-[1vw] uppercase tracking-tighter'>
+    <div id='about' className='w-full py-12 md:py-20 bg-[#c2d756] text-black rounded-tl-3xl rounded-tr-3xl overflow-hidden'>
+      {/* Responsive Heading */}
+      <h1 className='text-2xl sm:text-3xl md:text-[3vw] font-inter font-semibold px-6 md:px-[3vw] leading-tight'>
+        I have a strong interest in software engineering, I am eager to apply my technical skills and problem-solving abilities to innovative projects.
+      </h1>
+
+      <div className='w-full border-t-[2px] border-[#adbd5c] mt-8 md:mt-[4vw] flex flex-col md:flex-row items-center md:items-start px-6 md:px-[3vw] gap-10 md:gap-0'>
+        
+        {/* Left Content - Skills */}
+        <div className='w-full md:w-1/2 mt-6 md:mt-[2vw] text-center md:text-left'>
+          <h1 className='text-4xl sm:text-5xl md:text-[4vw] font-inter font-semibold'>My Skills :</h1>
+          <button className='mx-auto md:mx-0 bg-[#015551] text-white text-sm sm:text-base md:text-[1.1vw] flex gap-5 items-center font-mono py-3 px-8 rounded-full mt-6 md:mt-[2vw] uppercase tracking-tighter hover:scale-105 transition-transform'>
             View My Skills
             <div className='w-2 h-2 bg-white rounded-full'></div>
           </button>
         </div>
-        
-        <div 
-          ref={containerRef}
-          onMouseMove={handleMouseMove}
-          onMouseLeave={handleMouseLeave}
-          className='w-full md:w-1/2 mt-[2vw] rounded-3xl h-[70vh] mr-[3vw] [perspective:1200px] relative'
-        >
-          {/* Background shadow layer */}
-          <div 
-            className="absolute inset-0 bg-black/20 rounded-3xl transition-transform duration-300 ease-out"
-            style={{
-              transform: `rotateX(${rotate.x * 0.5}deg) rotateY(${rotate.y * 0.5}deg) translateZ(-50px) scale(0.95)`,
-              transformStyle: 'preserve-3d'
-            }}
-          />
-          
-          {/* Main image */}
-          <img 
-            src={myphoto} 
-            alt="My Photo" 
-            className="w-full h-full object-cover rounded-3xl transition-transform duration-300 ease-out relative z-10"
-            style={{
-              transform: `rotateX(${rotate.x}deg) rotateY(${rotate.y}deg) translateZ(50px) scale3d(1.05, 1.05, 1.05)`,
-              transformStyle: 'preserve-3d',
-              boxShadow: `${rotate.y * 0.5}px ${rotate.x * 0.5}px 40px rgba(0, 0, 0, 0.3)`
-            }}
-          />
-          
-          {/* Highlight overlay */}
-          <div 
-            className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-3xl transition-transform duration-300 ease-out pointer-events-none"
-            style={{
-              transform: `rotateX(${rotate.x}deg) rotateY(${rotate.y}deg) translateZ(60px)`,
-              transformStyle: 'preserve-3d',
-              opacity: Math.abs(rotate.x) + Math.abs(rotate.y) > 0 ? 0.6 : 0
-            }}
-          />
+
+        {/* Right Content - Responsive Image Stack */}
+        <div className='w-full md:w-1/2 flex justify-center items-center min-h-[50vh] md:h-[70vh]'>
+          <motion.div 
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            className="relative w-[70vw] h-[90vw] sm:w-[50vw] sm:h-[65vw] md:w-[22vw] md:h-[30vw] lg:w-[20vw] lg:h-[28vw]"
+          >
+            {/* Layer 1: Back Shadow Card */}
+            <motion.div 
+              style={{ x: backX, y: backY }}
+              className="absolute inset-0 bg-black/15 rounded-2xl border-2 border-black/5"
+            />
+
+            {/* Layer 2: Main Photo */}
+            <motion.div 
+              style={{ x: imgX, y: imgY }}
+              className="absolute inset-0 z-10 rounded-2xl overflow-hidden shadow-2xl"
+            >
+              <img 
+                src={myphoto} 
+                alt="Vipeen Kumar" 
+                className="w-full h-full object-cover scale-110" 
+              />
+            </motion.div>
+
+            {/* Layer 3: Floating Name Tag */}
+            <motion.div 
+              style={{ x: topX, y: topY }}
+              className="absolute inset-0 z-20 pointer-events-none flex items-end p-4 sm:p-6 md:p-8"
+            >
+              <span className="text-white font-mono text-xs sm:text-sm md:text-base lg:text-lg bg-black/40 backdrop-blur-md px-3 py-1 md:px-4 md:py-1.5 rounded-lg border border-white/20 whitespace-nowrap">
+                ~ Vipeen Kumar
+              </span>
+            </motion.div>
+
+            {/* Decorative Magnetic "HI!" Badge (Hidden on very small screens to avoid clutter) */}
+            <motion.div
+              style={{ x: topX, y: topY }}
+              className="hidden sm:flex absolute -top-4 -right-4 z-30 bg-[#015551] text-white text-[10px] md:text-[0.8vw] w-12 h-12 md:w-16 md:h-16 rounded-full items-center justify-center font-bold rotate-12 shadow-lg"
+            >
+              HI!
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </div>
