@@ -1,3 +1,5 @@
+![Homepage Screenshot](assets/demo1.png)
+
 🚀 Aniport – Animated Personal Portfolio
 
 Aniport is a modern, interactive, and visually engaging personal portfolio web application built with React. It is designed to showcase an individual’s professional profile, projects, certificates, and contact information using smooth animations and fluid navigation.
@@ -114,3 +116,25 @@ npm install
 
 # Start development server
 npm run dev
+
+📧 EmailJS Setup (Contact Form)
+
+Create an account at https://www.emailjs.com
+ and verify your email.
+
+Add an Email Service (Gmail / Outlook) from the EmailJS dashboard.
+
+Create an Email Template and use variables like user_name, user_email, and message.
+
+Copy your Service ID, Template ID, and Public Key from the dashboard.
+
+Create a .env file in the project root and add:
+
+VITE_EMAILJS_SERVICE_ID=your_service_id
+VITE_EMAILJS_TEMPLATE_ID=your_template_id
+VITE_EMAILJS_PUBLIC_KEY=your_public_key
+
+
+Restart the development server after adding environment variables.
+
+Submit the contact form to test email delivery.
