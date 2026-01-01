@@ -1,10 +1,5 @@
 import React from 'react';
 
-// The main App component that will be exported for preview.
-export default function App() {
-  return <Featured />;
-}
-
 // Data for the projects. In a real application, this might come from an API.
 const projects = [
   {
@@ -103,3 +98,5 @@ const Featured = () => {
     </div>
   );
 };
+
+export default Featured;
