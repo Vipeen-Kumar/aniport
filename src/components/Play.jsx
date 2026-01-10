@@ -222,7 +222,8 @@ const Play = () => {
 
     animationId = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(animationId);
-  }, [dots.length > 0 ? dots : [], returnSpeed, friction, repulsionStrength]); // Better dependency
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dots.length > 0 ? dots : [], returnSpeed, friction, repulsionStrength]); 
 
   const handleMouseMove = useCallback((e) => {
     const rect = containerRef.current?.getBoundingClientRect();
