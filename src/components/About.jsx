@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion, useSpring, useMotionValue, useTransform } from 'framer-motion';
+import { ArrowUpRight } from 'lucide-react';
 import myphoto from '../assets/myphoto.png';
 
 const About = () => {
@@ -36,7 +37,7 @@ const About = () => {
   return (
     <div id='about' className='w-full py-12 md:py-20 bg-[#c2d756] text-black rounded-tl-3xl rounded-tr-3xl overflow-hidden'>
       {/* Responsive Heading */}
-      <h1 className='text-2xl sm:text-3xl md:text-[3vw] font-inter font-semibold px-6 md:px-[3vw] leading-tight'>
+      <h1 style={{ lineHeight: '1' }} className='text-2xl sm:text-3xl md:text-[3vw] font-sans font-semibold px-6 md:px-[3vw]'>
         I have a strong interest in software engineering, I am eager to apply my technical skills and problem-solving abilities to innovative projects.
       </h1>
 
@@ -45,10 +46,17 @@ const About = () => {
         {/* Left Content - Skills */}
         <div className='w-full md:w-1/2 mt-6 md:mt-[2vw] text-center md:text-left'>
           <h1 className='text-4xl sm:text-5xl md:text-[4vw] font-inter font-semibold'>My Skills :</h1>
-          <button className='mx-auto md:mx-0 bg-[#015551] text-white text-sm sm:text-base md:text-[1.1vw] flex gap-5 items-center font-mono py-3 px-8 rounded-full mt-6 md:mt-[2vw] uppercase tracking-tighter hover:scale-105 transition-transform'>
+          <a 
+            href="https://drive.google.com/file/d/11v7JvcogOxCzfr3HeFGZyuyVKIq-_l73/view?usp=drive_link" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className='group mx-auto md:mx-0 bg-[#015551] text-white text-sm sm:text-base md:text-[1.1vw] flex w-fit gap-5 items-center font-mono py-3 px-8 rounded-full mt-6 md:mt-[2vw] uppercase tracking-tighter hover:scale-105 transition-all duration-300'
+          >
             View My Skills
-            <div className='w-2 h-2 bg-white rounded-full'></div>
-          </button>
+            <div className='w-2 h-2 bg-white rounded-full group-hover:w-10 group-hover:h-10 flex items-center justify-center transition-all duration-300 ease-in-out'>
+              <ArrowUpRight className='text-[#015551] opacity-0 group-hover:opacity-100 w-0 h-0 group-hover:w-6 group-hover:h-6 transition-all duration-300' />
+            </div>
+          </a>
         </div>
 
         {/* Right Content - Responsive Image Stack */}

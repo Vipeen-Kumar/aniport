@@ -35,7 +35,9 @@ const Navbar = () => {
   const navLinks = ["About me", "Projects", "Certificate", "Contact"];
 
   const handleScrollToSection = (sectionId) => {
-    const section = document.getElementById(sectionId);
+    // Map "aboutme" to "about" to match the ID in About.jsx
+    const targetId = sectionId === 'aboutme' ? 'about' : sectionId;
+    const section = document.getElementById(targetId);
     if (section) {
       section.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
