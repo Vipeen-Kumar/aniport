@@ -1,7 +1,7 @@
 import React from 'react';
 import codeai5 from '../assets/codeai5.png';
 import ima1 from '../assets/ima1.png';
-import codebox from '../assets/codebox.png';
+import codebox from '../assets/Codebox.png';
 
 // Data for the projects. In a real application, this might come from an API.
 const projects = [
