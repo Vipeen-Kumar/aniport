@@ -35,13 +35,13 @@ const About = () => {
   };
 
   return (
-    <div id='about' className='w-full py-12 md:py-20 bg-[#c2d756] text-black rounded-tl-3xl rounded-tr-3xl overflow-hidden'>
+    <div id='about' className='w-full py-12 md:py-20 bg-[#00746e] text-white rounded-tl-3xl rounded-tr-3xl overflow-hidden'>
       {/* Responsive Heading */}
       <h1 style={{ lineHeight: '1' }} className='text-2xl sm:text-3xl md:text-[3vw] font-sans font-semibold px-6 md:px-[3vw]'>
         I have a strong interest in software engineering, I am eager to apply my technical skills and problem-solving abilities to innovative projects.
       </h1>
 
-      <div className='w-full border-t-[2px] border-[#adbd5c] mt-8 md:mt-[4vw] flex flex-col md:flex-row items-center md:items-start px-6 md:px-[3vw] gap-10 md:gap-0'>
+      <div className='w-full border-t-[2px] border-[#015551] mt-8 md:mt-[4vw] flex flex-col md:flex-row items-center md:items-start px-6 md:px-[3vw] gap-10 md:gap-0'>
         
         {/* Left Content - Skills */}
         <div className='w-full md:w-1/2 mt-6 md:mt-[2vw] text-center md:text-left flex flex-col'>
@@ -56,7 +56,7 @@ const About = () => {
             ].map((skill, index) => (
               <div key={index} className='flex items-center gap-4 group justify-center md:justify-start'>
                 <div className='w-2 h-2 bg-[#015551] rounded-full group-hover:scale-150 transition-transform duration-300'></div>
-                <p className='text-lg sm:text-xl md:text-[1.5vw] font-mono tracking-tight text-black/80 hover:text-black transition-colors'>
+                <p className='text-lg sm:text-xl md:text-[1.5vw] font-mono tracking-tight text-white/80 hover:text-white transition-colors'>
                   {skill}
                 </p>
               </div>
@@ -67,7 +67,7 @@ const About = () => {
             href="https://drive.google.com/file/d/11v7JvcogOxCzfr3HeFGZyuyVKIq-_l73/view?usp=drive_link" 
             target="_blank" 
             rel="noopener noreferrer"
-            className='group mx-auto md:mx-0 bg-[#015551] text-white text-sm sm:text-base md:text-[1.1vw] flex w-fit gap-5 items-center font-mono py-3 px-8 rounded-full mt-10 md:mt-[3vw] uppercase tracking-tighter hover:scale-105 transition-all duration-300'
+            className='group mx-auto md:mx-0 bg-[#015551] text-white text-sm sm:text-base md:text-[1.1vw] flex w-fit gap-5 items-center font-mono py-3 px-8 rounded-full mt-10 md:mt-[3vw] uppercase tracking-tighter border border-white hover:scale-105 transition-all duration-300'
           >
             View My Skills
             <div className='w-2 h-2 bg-white rounded-full group-hover:w-10 group-hover:h-10 flex items-center justify-center transition-all duration-300 ease-in-out'>
